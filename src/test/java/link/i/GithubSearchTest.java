@@ -19,8 +19,8 @@ import static io.qameta.allure.Allure.step;
 
 public class GithubSearchTest {
 
-    @Feature("Êîíòåíò íà ñòðàíèöå Wiki")
-    @Story("Êîíòåíò SoftAssertions")
+    @Feature("ÐšÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ðµ Wiki")
+    @Story("ÐšÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ SoftAssertions")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     void searchExample() {
@@ -38,9 +38,9 @@ public class GithubSearchTest {
                 wikiTab = "#wiki-tab",
                 pageContent = "#wiki-wrapper";
 
-        step("Îòêðûòü ñòðàíèöó Selenide íà ñàéòå Github", ()-> open(url));
-        step("Îòêðûòü âêëàäêó Wiki",() ->$(wikiTab).click());
-        step("Îòêðûòü ñòðàíèöó " + desiredPageName, () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ Selenide Ð½Ð° ÑÐ°Ð¹Ñ‚Ðµ Github", ()-> open(url));
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð²ÐºÐ»Ð°Ð´ÐºÑƒ Wiki",() ->$(wikiTab).click());
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ " + desiredPageName, () -> {
             $(hiddenPagesButton)
                     .findElement(withText(hiddenPagesButtonText))
                     .click();
@@ -49,7 +49,7 @@ public class GithubSearchTest {
                     .click();
             $(pageContent).$(withText(desiredPageName)).shouldBe(Condition.visible);
         });
-        step("Ïîäòâåðäèòü íàëè÷èå ïðèìåðà äëÿ JUnit5", () ->
+        step("ÐŸÐ¾Ð´Ñ‚Ð²ÐµÑ€Ð´Ð¸Ñ‚ÑŒ Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ðµ Ð¿Ñ€Ð¸Ð¼ÐµÑ€Ð° Ð´Ð»Ñ JUnit5", () ->
                 $(pageContent).$(withText(exampleTitle)).shouldBe(Condition.exist)
         );
     }
